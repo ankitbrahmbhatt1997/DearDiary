@@ -1,0 +1,141 @@
+{{!--
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+    <div class="container">
+        <a class="navbar-brand" href="/">Vidjot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">Home
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {{#if user}}
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink">Video Ideas</a>
+                    <div class="dropdown-menu">
+                        <a href="/ideas" class="dropdown-item">Ideas</a>
+                        <a href="/ideas/add" class="dropdown-item">Add Idea</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">LogOut</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a href="/users/login" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/register" class="nav-link">Register</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav> --}}
+<div class="fixed-navbar">
+
+
+    <ul id="dropdown1" class="dropdown-content">
+        <li>
+            <a href="/ideas">Stories</a>
+        </li>
+        <li class="divider" tabindex="-1"></li>
+        <li>
+            <a href="/ideas/add">Add</a>
+        </li>
+
+    </ul>
+
+    <ul id="dropdown2" class="dropdown-content">
+        <li>
+            <a href="/ideas">Stories</a>
+        </li>
+        <li class="divider" tabindex="-1"></li>
+        <li>
+            <a href="/ideas/add">Add</a>
+        </li>
+
+    </ul>
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+
+        {{#if user}}
+
+        <li>
+            <a href="#" class="dropdown-trigger" data-target="dropdown2">Story
+                <i class="material-icons right">arrow_drop_down</i>
+            </a>
+        </li>
+        <li>
+            <a href="/users/logout">logout</a>
+        </li>
+        {{else}}
+
+        <li>
+            <a href="/users/login">Login</a>
+        </li>
+        <li>
+            <a href="/users/register">register</a>
+        </li>
+
+        {{/if}}
+    </ul>
+    <nav class="teal">
+        <div class="container">
+            <a href="#" data-target="slide-out" class="left hide-on-large sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">DearDiary</a>
+                <ul class="left hide-on-med-and-down">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                </ul>
+                {{#if user}}
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="#" class="dropdown-trigger" data-target="dropdown1">Story
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/users/logout">logout</a>
+                    </li>
+                </ul>
+
+
+                {{else}}
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="/users/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/users/register">register</a>
+                    </li>
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+
+</div>
+{{> msg}} {{> error}}

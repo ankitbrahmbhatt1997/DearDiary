@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All ideas</title>
+    {{> styling}}
+
+</head>
+
+<body>
+    {{> main}}
+    <div class="container">
+        {{#each ideas}}
+        <div class="card-panel">
+            <h3 class="teal-text">{{formatDate date 'MMMM Do YYYY'}}</h3>
+            <h4>{{title}}</h4>
+            <p>{{details}}</p>
+            <a class="btn-floating btn-large right" href="/ideas/edit/{{id}}">
+                <i class="material-icons">edit</i>
+            </a>
+            <form method="post" action="/ideas/{{id}}?_method=DELETE">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" value="Delete" class="btn-floating btn-large left">
+                    <i class="material-icons">delete</i>
+                </button>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+        {{else}}
+        <p class="flow-text teal-text">No Entries Present</p>
+        {{/each}}
+    </div>{{> bootstrap}}
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add</title>
+    {{> styling}}
+
+</head>
+
+<body>
+    {{> main}}
+    <div class="container">
+        <div class="card-panel">
+            <h3>Today's Story</h3>
+            <form action="/ideas" method="post">
+                <div class="input-field">
+
+                    <input type="text" name="title" required placeholder="Title">
+                </div>
+                <div class="input-field">
+
+                    <textarea class="materialize-textarea" name="details" required placeholder="Jot It down"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>{{> bootstrap}}
+</body>
+
+</html>
